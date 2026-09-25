@@ -22,8 +22,8 @@ const USER_HASHES = [
 ]
 const PASS_HASH = 'e9e69fcd703e857da732ae1e8c0d839920a24cb3407cc98440c04a4c7b62545d'
 const PILOTO_USER_HASH = 'ef9d5711a95ddcc209cf8d01664f22d88289cacef4deb6921618b067e0a79c2c'
-const PILOTO_PASS_HASH = '27971dc3f067a24f5a79ab20ab90950ebebe32d993a44fac555e78963d35c9cd'
-const pilotoPassword = 'totuspay25092026'
+const PILOTO_PASS_HASH = '712d2b1f292ff67aa10efb79a2c64f6c1b90ca85d179c5733d3378dd47ab18b5'
+const pilotoPassword = 'totvspay25092026'
 
 const source = fs.readFileSync(sourcePath, 'utf8')
 const cssStart = source.indexOf('    .deal{')
@@ -41,11 +41,11 @@ const flowCss = (source.slice(cssStart, loginCssStart) + source.slice(mediaStart
 let flowJs = source.slice(scriptStart + '<script>'.length, scriptEnd).trim()
 
 flowJs = flowJs.replace(
-  /const USERS=new Set\(\['nic','nat','poli','gui','bruno','lu','triz','ze','piloto','ana'\]\);\r?\nfunction normUser\(v\)\{return \(v\|\|''\)\.trim\(\)\.toLowerCase\(\)\.normalize\('NFD'\)\.replace\(\/\\p\{M\}\/gu,''\)\}\r?\nfunction isValidLogin\(u,p\)\{const n=normUser\(u\);if\(n==='piloto'\)return p==='totuspay25092026';return USERS\.has\(n\)&&p==='123'\}\r?\n/,
+  /const USERS=new Set\(\['nic','nat','poli','gui','bruno','lu','triz','ze','piloto','ana'\]\);\r?\nfunction normUser\(v\)\{return \(v\|\|''\)\.trim\(\)\.toLowerCase\(\)\.normalize\('NFD'\)\.replace\(\/\\p\{M\}\/gu,''\)\}\r?\nfunction isValidLogin\(u,p\)\{const n=normUser\(u\);if\(n==='piloto'\)return p==='totvspay25092026';return USERS\.has\(n\)&&p==='123'\}\r?\n/,
   '',
 )
 
-if (flowJs.includes("p==='123'") || flowJs.includes('totuspay25092026') || flowJs.includes("new Set(['nic'")) {
+if (flowJs.includes("p==='123'") || flowJs.includes('totvspay25092026') || flowJs.includes("new Set(['nic'")) {
   throw new Error('Failed to strip credentials from flow JS')
 }
 
@@ -209,7 +209,7 @@ const publicHtml =
   `<script>\n${gate}\n</script>` +
   source.slice(scriptEnd + '</script>'.length)
 
-if (publicHtml.includes("p==='123'") || publicHtml.includes('totuspay25092026') || publicHtml.includes("new Set(['nic'")) {
+if (publicHtml.includes("p==='123'") || publicHtml.includes('totvspay25092026') || publicHtml.includes("new Set(['nic'")) {
   throw new Error('Public HTML still contains plaintext credentials')
 }
 if (publicHtml.includes('function checkoutHTML') || publicHtml.includes('MALGA_LOGO') || publicHtml.includes('checkout-main') || publicHtml.includes('totvsMark')) {

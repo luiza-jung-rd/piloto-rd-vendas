@@ -332,7 +332,7 @@ const uid=()=>crypto.randomUUID();
 const state={links:[],drawer:'closed',active:null,toast:null,pendingSuccess:false,totalOpen:false,draft:emptyDraft(),tab:'Histórico',view:'deal',checkout:null,checkoutStep:'identify',ident:emptyIdent(),authed:false,loginError:'',loginUser:'',loginPass:''};
 const USERS=new Set(['nic','nat','poli','gui','bruno','lu','triz','ze','piloto','ana']);
 function normUser(v){return (v||'').trim().toLowerCase().normalize('NFD').replace(/\p{M}/gu,'')}
-function isValidLogin(u,p){const n=normUser(u);if(n==='piloto')return p==='totuspay25092026';return USERS.has(n)&&p==='123'}
+function isValidLogin(u,p){const n=normUser(u);if(n==='piloto')return p==='totvspay25092026';return USERS.has(n)&&p==='123'}
 let toastTimer;
 function emptyDraft(){return{name:DEAL.name,description:'',total:0,specify:false,items:[{id:uid(),name:'',unit:0,qty:1}]}}
 function emptyIdent(){return{name:'',email:'',phone:'',doc:'',street:'',number:'',complement:'',district:'',city:'',uf:'',cep:''}}

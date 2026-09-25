@@ -12,7 +12,7 @@ const USER_HASHES = new Set([
 
 const PASS_HASH = 'e9e69fcd703e857da732ae1e8c0d839920a24cb3407cc98440c04a4c7b62545d'
 const PILOTO_USER_HASH = 'ef9d5711a95ddcc209cf8d01664f22d88289cacef4deb6921618b067e0a79c2c'
-const PILOTO_PASS_HASH = '27971dc3f067a24f5a79ab20ab90950ebebe32d993a44fac555e78963d35c9cd'
+const PILOTO_PASS_HASH = '712d2b1f292ff67aa10efb79a2c64f6c1b90ca85d179c5733d3378dd47ab18b5'
 export const AUTH_STORAGE_KEY = 'pd-ai-auth'
 
 function normalizeUser(value: string) {
